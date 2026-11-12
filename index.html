@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amart Tyres website concept demo</title>
+<meta name="description" content="5-star rated tyre shop at 86 Parramatta Road, Granville. New tyres, wheel alignments, puncture repairs and car servicing. Get a quote online or call (02) 8872 6516.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#16171a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Amart Tyres Granville">
+<meta property="og:description" content="New tyres, wheel alignments, puncture repairs and car servicing at 86 Parramatta Road, Granville. Get a quote online or call (02) 8872 6516.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,600;0,700;1,700;1,800&display=swap">
+<style>
+/* Layout: asphalt bands carry the calls to action; concrete-grey bands carry the reading.
+   One motif throughout: the tyre sidewall code (205/55 R16) and its slash. */
+:root{
+  --asphalt:#16171a;
+  --asphalt-2:#22242a;
+  --asphalt-3:#30333a;
+  --red:#dc1f26;
+  --red-deep:#b3141b;
+  --lane:#f5c21b;
+  --concrete:#eef0f2;
+  --white:#ffffff;
+  --ink:#16171a;
+  --muted:#575c65;
+  --muted-on-dark:#b4b8bf;
+  --rule:#d8dbe0;
+  --rule-dark:#3a3d45;
+  --ok:#1c7c45;
+  --display:"Barlow Condensed","Arial Narrow","Roboto Condensed",Impact,sans-serif;
+  --body:"Barlow","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --radius:6px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--asphalt)}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.98;margin:0;text-wrap:balance;letter-spacing:.005em}
+h2{font-size:clamp(2.1rem,5vw,3.25rem)}
+h3{font-size:1.5rem;font-weight:700}
+p{margin:0}
+:focus-visible{outline:3px solid var(--lane);outline-offset:2px}
+.wrap{max-width:1180px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media(min-width:720px){.wrap{padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px))}}
+.band{padding-block:clamp(56px,8vw,96px)}
+.band.concrete{background:var(--concrete)}
+.band.dark{background:var(--asphalt);color:var(--white)}
+.eyebrow{font-family:var(--display);font-weight:700;font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:10px}
+.dark .eyebrow{color:var(--lane)}
+.lede{font-size:1.125rem;color:var(--muted);max-width:60ch;margin-top:14px}
+.dark .lede{color:var(--muted-on-dark)}
+.slash{color:var(--red);font-style:italic;font-weight:800;font-family:var(--display)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 24px;border-radius:var(--radius);border:2px solid transparent;font-family:var(--display);font-weight:700;font-size:1.25rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .15s,transform .15s,border-color .15s}
+.btn:active{transform:translateY(1px)}
+.btn-red{background:var(--red);color:var(--white)}
+.btn-red:hover{background:var(--red-deep)}
+.btn-ghost{border-color:var(--rule-dark);color:var(--white);background:transparent}
+.btn-ghost:hover{border-color:var(--white)}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:var(--white)}
+.btn svg{flex:none}
+
+/* demo strip */
+.demo-strip{background:var(--lane);color:var(--ink);font-size:.875rem;font-weight:600;text-align:center}
+.demo-strip .wrap{padding-block:8px}
+
+/* header */
+.site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--asphalt);color:var(--white);border-bottom:1px solid var(--rule-dark)}
+.site-head .wrap{display:flex;align-items:center;gap:20px;min-height:68px}
+.mark{font-family:var(--display);font-style:italic;font-weight:800;font-size:1.9rem;letter-spacing:.01em;text-transform:uppercase;text-decoration:none;line-height:1;white-space:nowrap;color:var(--white)}
+.mark b{color:var(--red);font-weight:800}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{font-weight:600;font-size:.98rem;text-decoration:none;color:var(--muted-on-dark);padding-block:8px}
+.nav a:hover{color:var(--white)}
+.head-phone{font-family:var(--display);font-weight:700;font-size:1.35rem;letter-spacing:.03em;text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums;display:flex;align-items:center;gap:8px}
+.head-phone svg{color:var(--red)}
+.site-head .btn{min-height:44px;padding:8px 18px;font-size:1.1rem}
+.menu-btn{display:none;margin-left:auto;background:none;border:2px solid var(--rule-dark);color:var(--white);border-radius:var(--radius);width:46px;height:44px;cursor:pointer;align-items:center;justify-content:center}
+@media(max-width:980px){
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--asphalt);border-bottom:1px solid var(--rule-dark);flex-direction:column;gap:0;padding:6px max(16px,env(safe-area-inset-right,0px)) 14px max(16px,env(safe-area-inset-left,0px))}
+  .nav.open{display:flex}
+  .nav a{padding-block:14px;border-bottom:1px solid var(--rule-dark);font-size:1.05rem;color:var(--white)}
+  .menu-btn{display:inline-flex}
+  .site-head .head-cta{display:none}
+}
+@media(max-width:520px){.head-phone span{display:none}.head-phone{border:2px solid var(--rule-dark);border-radius:var(--radius);width:46px;height:44px;justify-content:center}.mark{font-size:1.6rem}}
+
+/* hero */
+.hero{background:linear-gradient(180deg,var(--asphalt) 0%,var(--asphalt-2) 100%);color:var(--white);position:relative;overflow:hidden}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:32px;align-items:center;padding-block:clamp(44px,7vw,88px)}
+.hero-copy{min-width:0;position:relative;z-index:2}
+.rating{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-weight:600;font-size:1rem;margin-bottom:22px;text-decoration:none}
+.stars{color:var(--lane);letter-spacing:3px;font-size:1.15rem;line-height:1}
+.rating em{font-style:normal;color:var(--muted-on-dark);font-weight:500}
+.hero h1{font-size:clamp(3.1rem,9vw,6.4rem);line-height:.9}
+.hero h1 span{color:var(--red);white-space:nowrap}
+.hero .lede{font-size:1.2rem;margin-top:22px;max-width:48ch;color:#d3d6db}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:10px 26px;margin:30px 0 0;padding:22px 0 0;list-style:none;border-top:1px solid var(--rule-dark);font-size:.98rem;color:var(--muted-on-dark)}
+.hero-facts li{display:flex;align-items:center;gap:8px}
+.hero-facts li::before{content:"/";font-family:var(--display);font-style:italic;font-weight:800;color:var(--red);font-size:1.2rem;line-height:1}
+.hero-tyre{position:relative;aspect-ratio:1;width:128%;max-width:none;justify-self:start}
+.hero-tyre svg{width:100%;height:100%;display:block;animation:roll 1.3s cubic-bezier(.2,.75,.25,1) both}
+@keyframes roll{from{transform:translateX(38%) rotate(150deg)}to{transform:none}}
+@media(prefers-reduced-motion:reduce){.hero-tyre svg{animation:none}html{scroll-behavior:auto}}
+@media(max-width:860px){
+  .hero .wrap{grid-template-columns:minmax(0,1fr);padding-bottom:0;gap:26px}
+  .hero-tyre{width:min(118%,560px);justify-self:center;height:210px;aspect-ratio:auto;overflow:hidden}
+  .hero-tyre svg{height:auto;aspect-ratio:1}
+}
+
+/* lane divider */
+.lane{height:6px;background:repeating-linear-gradient(90deg,var(--lane) 0 46px,transparent 46px 82px);opacity:.9}
+.dark .lane,.hero .lane{background-color:var(--asphalt-2)}
+
+/* intents */
+.intents{background:var(--asphalt-2);color:var(--white)}
+.intents .wrap{padding-block:26px 34px}
+.intents p{font-family:var(--display);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-on-dark);font-size:.95rem;margin-bottom:14px}
+.intent-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.intent{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;text-align:left;background:var(--asphalt-3);border:1px solid var(--rule-dark);border-radius:var(--radius);color:var(--white);padding:18px 18px 16px;cursor:pointer;font-family:var(--display);font-style:italic;font-weight:700;font-size:1.5rem;line-height:1.02;text-transform:uppercase;min-height:92px;transition:background .15s,border-color .15s}
+.intent small{display:block;font-family:var(--body);font-style:normal;font-weight:500;font-size:.875rem;text-transform:none;color:var(--muted-on-dark);margin-top:6px;line-height:1.3}
+.intent svg{flex:none;color:var(--red);transition:transform .15s}
+.intent:hover{background:var(--red);border-color:var(--red)}
+.intent:hover small,.intent:hover svg{color:var(--white)}
+.intent:hover svg{transform:translateX(4px)}
+@media(max-width:900px){.intent-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:440px){.intent{font-size:1.25rem;padding:14px;min-height:84px}.intent svg{display:none}}
+
+/* services */
+.svc-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,5vw,64px);margin-top:44px}
+.svc-col h3{padding-bottom:14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.svc-col h3 span{font-family:var(--body);font-style:normal;font-weight:600;font-size:.85rem;letter-spacing:.06em;color:var(--muted)}
+.svc-list{list-style:none;margin:0;padding:0}
+.svc-list li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:4px 8px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.svc-list li::before{content:"/";font-family:var(--display);font-style:italic;font-weight:800;color:var(--red);font-size:1.5rem;line-height:1.1}
+.svc-list strong{display:block;font-weight:700;font-size:1.08rem}
+.svc-list span{display:block;color:var(--muted);font-size:.98rem;margin-top:2px}
+.svc-foot{margin-top:40px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.svc-foot p{color:var(--muted);flex:1 1 280px;min-width:0}
+@media(max-width:760px){.svc-cols{grid-template-columns:minmax(0,1fr)}}
+
+/* quote */
+.quote-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(24px,4vw,56px);margin-top:40px;align-items:start}
+.q-card{background:var(--white);color:var(--ink);border-radius:10px;padding:clamp(20px,3.4vw,36px);min-width:0}
+fieldset{border:0;padding:0;margin:0 0 26px;min-width:0}
+legend,.flabel{font-family:var(--display);font-weight:700;font-size:1.15rem;letter-spacing:.06em;text-transform:uppercase;padding:0;margin-bottom:10px;display:block}
+legend small,.flabel small{font-family:var(--body);font-weight:500;text-transform:none;letter-spacing:0;color:var(--muted);font-size:.9rem;margin-left:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;width:100%;height:100%;cursor:pointer;margin:0}
+.chip span{display:inline-flex;align-items:center;min-height:46px;padding:8px 16px;border:2px solid var(--rule);border-radius:999px;font-weight:600;font-size:1rem;background:var(--white);transition:all .12s}
+.chip input:checked+span{background:var(--ink);border-color:var(--ink);color:var(--white)}
+.chip input:focus-visible+span{outline:3px solid var(--lane);outline-offset:2px}
+.chip:hover span{border-color:var(--ink)}
+.row{display:grid;gap:14px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.field{min-width:0}
+.field label{display:block;font-weight:600;font-size:.93rem;margin-bottom:6px}
+.field label small{font-weight:500;color:var(--muted)}
+input[type=text],input[type=tel],input[type=date],select,textarea{width:100%;min-height:50px;padding:10px 14px;border:2px solid var(--rule);border-radius:var(--radius);background:var(--white);color:var(--ink);font:inherit;font-size:1.05rem}
+textarea{min-height:88px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--lane)}
+.size-row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:end}
+.size-row .sep{font-family:var(--display);font-style:italic;font-weight:800;font-size:1.9rem;color:var(--red);padding-bottom:8px;line-height:1}
+.size-row select{font-family:var(--display);font-weight:700;font-size:1.4rem;font-variant-numeric:tabular-nums;padding-inline:10px}
+.check{display:flex;gap:10px;align-items:center;margin-top:12px;font-size:.98rem;cursor:pointer}
+.check input{width:20px;height:20px;accent-color:var(--red);flex:none;margin:0}
+.hint{font-size:.92rem;color:var(--muted);margin-top:8px}
+.err{color:var(--red-deep);font-size:.9rem;font-weight:600;margin-top:6px}
+.field.bad input{border-color:var(--red)}
+.submit-row{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;margin-top:6px}
+.submit-row .btn{flex:1 1 240px}
+.submit-row p{flex:1 1 220px;font-size:.92rem;color:var(--muted);min-width:0}
+.done{text-align:left}
+.done .tick{width:54px;height:54px;border-radius:50%;background:var(--ok);color:var(--white);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.done h3{font-size:2rem}
+.done dl{margin:20px 0;border-top:1px solid var(--rule)}
+.done dl div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:10px;padding:10px 0;border-bottom:1px solid var(--rule)}
+.done dt{color:var(--muted);font-size:.93rem;font-weight:600}
+.done dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.demo-note{background:#fff6d6;border:1px solid var(--lane);border-radius:var(--radius);padding:12px 14px;font-size:.93rem;margin-bottom:18px}
+
+.reader{min-width:0}
+.reader-tyre{width:min(100%,340px);aspect-ratio:1;margin-inline:auto}
+.reader-tyre svg{width:100%;height:100%;display:block}
+.reader h3{margin-top:22px;color:var(--white)}
+.code{font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,6vw,3.6rem);line-height:1;margin-top:12px;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.code .w{color:var(--lane)}.code .p{color:#ff6a70}.code .r{color:#7fd0ff}.code i{color:var(--muted-on-dark);font-style:normal}
+.legend{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:8px;font-size:.98rem;color:var(--muted-on-dark)}
+.legend b{display:inline-block;min-width:42px;font-family:var(--display);font-size:1.2rem;font-variant-numeric:tabular-nums}
+.legend .w b{color:var(--lane)}.legend .p b{color:#ff6a70}.legend .r b{color:#7fd0ff}
+.reader .or{margin-top:22px;padding-top:20px;border-top:1px solid var(--rule-dark);color:var(--muted-on-dark);font-size:.98rem}
+.reader .or a{color:var(--white);font-weight:700;font-family:var(--display);font-size:1.5rem;letter-spacing:.03em;text-decoration:none;display:block;margin-top:4px;font-variant-numeric:tabular-nums}
+@media(max-width:900px){.quote-grid{grid-template-columns:minmax(0,1fr)}.reader{order:-1;display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;align-items:center}.reader-tyre{width:150px}.reader h3{margin-top:0}.reader .or{grid-column:1/-1;margin-top:4px}.legend{display:none}}
+@media(max-width:520px){.row,.row.three{grid-template-columns:minmax(0,1fr)}.reader{grid-template-columns:104px minmax(0,1fr)}.reader-tyre{width:104px}}
+
+/* reviews */
+.rev-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);align-items:start}
+.score{font-family:var(--display);font-weight:800;font-style:italic;font-size:clamp(6rem,17vw,11rem);line-height:.8;letter-spacing:-.01em}
+.score sup{font-size:.28em;color:var(--muted);font-style:normal;font-weight:700;vertical-align:top;margin-left:6px;position:relative;top:.35em}
+.score-meta{margin-top:20px;display:flex;flex-direction:column;gap:6px}
+.score-meta .stars{font-size:1.6rem;color:#e0a800}
+.score-meta a{font-weight:600}
+.pull{margin:28px 0 0;padding:0 0 0 18px;border-left:5px solid var(--red)}
+.pull p{font-family:var(--display);font-style:italic;font-weight:700;font-size:1.9rem;line-height:1.05;text-transform:uppercase}
+.pull cite{display:block;font-style:normal;color:var(--muted);font-size:.93rem;margin-top:8px}
+.said{list-style:none;margin:26px 0 0;padding:0;border-top:3px solid var(--ink)}
+.said li{display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:8px 22px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.said b{font-family:var(--display);font-style:italic;font-weight:800;font-size:1.5rem;text-transform:uppercase;line-height:1}
+.said span{color:var(--muted)}
+.fine{font-size:.88rem;color:var(--muted);margin-top:16px}
+@media(max-width:820px){.rev-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:480px){.said li{grid-template-columns:minmax(0,1fr)}}
+
+/* brands */
+.brand-rows{margin-top:36px;display:grid;gap:26px}
+.brand-row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;align-items:baseline;padding-top:22px;border-top:1px solid var(--rule-dark)}
+.brand-row span{font-family:var(--display);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lane);font-size:.95rem}
+.brand-row ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 26px;font-family:var(--display);font-weight:700;font-style:italic;text-transform:uppercase;font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.1}
+.brand-row li+li::before{content:"/";color:var(--red);margin-right:26px}
+@media(max-width:620px){.brand-row{grid-template-columns:minmax(0,1fr);gap:8px}.brand-row ul{gap:4px 14px}.brand-row li+li::before{margin-right:14px}}
+
+/* about + faq */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,5vw,72px);align-items:start}
+.about p+p{margin-top:16px}
+.about p{color:var(--muted);max-width:60ch}
+.about h2{margin-bottom:20px}
+.faq h2{margin-bottom:14px}
+details{border-bottom:1px solid var(--rule)}
+details:first-of-type{border-top:3px solid var(--ink)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 0;font-weight:700;font-size:1.08rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--display);font-weight:700;font-size:1.8rem;color:var(--red);line-height:1;flex:none}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);padding:0 0 20px;max-width:58ch}
+@media(max-width:820px){.two{grid-template-columns:minmax(0,1fr)}}
+
+/* find us */
+.find-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:40px;border-top:3px solid var(--white)}
+.find-grid>div{padding:26px 26px 26px 0;min-width:0}
+.find-grid>div+div{padding-left:26px;border-left:1px solid var(--rule-dark)}
+.find-grid h3{font-size:1.05rem;font-style:normal;letter-spacing:.14em;color:var(--lane);margin-bottom:12px}
+.find-grid .big{font-family:var(--display);font-weight:700;font-size:1.9rem;line-height:1.08;font-variant-numeric:tabular-nums}
+.find-grid p{color:var(--muted-on-dark)}
+.find-grid .big+p{margin-top:8px}
+.find-grid a.link{display:inline-block;margin-top:14px;font-weight:700;color:var(--white);text-underline-offset:4px}
+.copy-btn{margin-top:14px;background:none;border:1px solid var(--rule-dark);color:var(--white);border-radius:var(--radius);padding:8px 14px;font:inherit;font-size:.93rem;font-weight:600;cursor:pointer}
+.copy-btn:hover{border-color:var(--white)}
+.find-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.map-strip{margin-top:40px;border-radius:10px;overflow:hidden;background:var(--asphalt-3);position:relative;min-height:170px;display:flex;align-items:center}
+.map-strip::before{content:"";position:absolute;left:0;right:0;top:50%;height:6px;transform:translateY(-50%);background:repeating-linear-gradient(90deg,var(--lane) 0 46px,transparent 46px 82px);opacity:.55}
+.map-strip .pin{position:relative;margin-left:clamp(20px,12%,160px);background:var(--red);color:var(--white);padding:12px 18px;border-radius:var(--radius);font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;line-height:1.1}
+.map-strip .pin small{display:block;font-family:var(--body);font-weight:500;font-size:.85rem;text-transform:none;letter-spacing:0;opacity:.92;margin-top:3px}
+.map-strip .road{position:absolute;right:18px;bottom:12px;font-family:var(--display);font-weight:700;letter-spacing:.2em;font-size:.9rem;color:var(--muted-on-dark);text-transform:uppercase}
+.map-embed{margin-top:40px;border-radius:10px;overflow:hidden}
+.map-embed iframe{display:block;width:100%;height:360px;border:0}
+@media(max-width:820px){.find-grid{grid-template-columns:minmax(0,1fr)}.find-grid>div{padding:22px 0}.find-grid>div+div{padding-left:0;border-left:0;border-top:1px solid var(--rule-dark)}}
+
+/* footer */
+.foot{background:#0d0e10;color:var(--muted-on-dark);font-size:.93rem}
+.foot .wrap{padding-block:30px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between}
+.foot .mark{font-size:1.5rem}
+.foot nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--white)}
+.foot .legal{flex:1 1 100%;padding-top:16px;border-top:1px solid var(--rule-dark)}
+
+/* mobile action bar */
+.bar{display:none}
+@media(max-width:760px){
+  .bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--asphalt);border-top:1px solid var(--rule-dark);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+  .bar .btn{min-height:50px;padding:8px 10px;font-size:1.15rem}
+  body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+}
+</style>
+
+<!--DEMO:START-->
+<div class="demo-strip"><div class="wrap">Concept demo prepared for Amart Tyres by George Lahoud. This is not the live Amart Tyres website and the form does not send anything.</div></div>
+<!--DEMO:END-->
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Amart Tyres home"><b>A</b>mart <b>Tyres</b></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#brands">Tyres &amp; wheels</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">Questions</a>
+      <a href="#find-us">Find us</a>
+    </nav>
+    <a class="head-phone" href="tel:+61288726516" aria-label="Call Amart Tyres on (02) 8872 6516">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span>(02) 8872 6516</span>
+    </a>
+    <a class="btn btn-red head-cta" href="#quote">Get a quote</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <a class="rating" href="#reviews"><span class="stars" aria-hidden="true">★★★★★</span><span>5.0 on Google</span><em>from more than 2,100 reviews</em></a>
+      <h1>Granville's <span>5-star</span> tyre shop.</h1>
+      <p class="lede">New tyres, wheel alignments, puncture repairs and car servicing at 86 Parramatta Road. Tell us your tyre size and we'll come back with a price.</p>
+      <div class="hero-cta">
+        <a class="btn btn-red" href="#quote">Get a tyre quote
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="tel:+61288726516">Call (02) 8872 6516</a>
+      </div>
+      <ul class="hero-facts">
+        <li>No booking needed</li>
+        <li>Warranty on every new tyre</li>
+        <li>Cars, 4WDs and light trucks</li>
+      </ul>
+    </div>
+    <div class="hero-tyre" id="heroTyre" aria-hidden="true"></div>
+  </div>
+  <div class="lane" aria-hidden="true"></div>
+</section>
+
+<section class="intents" aria-label="What do you need today?">
+  <div class="wrap">
+    <p>What do you need today?</p>
+    <div class="intent-grid">
+      <button class="intent" type="button" data-pick="tyres"><span>New tyres<small>Price on your size</small></span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <button class="intent" type="button" data-pick="puncture"><span>Puncture repair<small>Flat or slow leak</small></span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <button class="intent" type="button" data-pick="alignment"><span>Wheel alignment<small>Pulling or uneven wear</small></span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <button class="intent" type="button" data-pick="service"><span>Car service<small>Oil, brakes, battery</small></span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="services">
+  <div class="wrap">
+    <span class="eyebrow">Services</span>
+    <h2>Tyres first. The rest of the car too.</h2>
+    <p class="lede">One stop on Parramatta Road for tyres, wheels and the routine servicing that keeps a car safe.</p>
+    <div class="svc-cols">
+      <div class="svc-col">
+        <h3>Tyre services <span>8 services</span></h3>
+        <ul class="svc-list">
+          <li><div><strong>New tyre sales and fitting</strong><span>Premium and budget tyres for every make and model, fitted and balanced.</span></div></li>
+          <li><div><strong>Wheel alignment and balancing</strong><span>Computerised alignment for straighter steering, better fuel use and longer tyre life.</span></div></li>
+          <li><div><strong>Puncture repairs</strong><span>Fast repairs that get you safely back on the road.</span></div></li>
+          <li><div><strong>Tyre rotation and pressure checks</strong><span>Even wear across all four wheels.</span></div></li>
+          <li><div><strong>Run-flat tyre replacement</strong><span>Fitting and care for vehicles with run-flat systems.</span></div></li>
+          <li><div><strong>Tyre inspection and safety checks</strong><span>Wear, damage and slow leaks found before they turn serious.</span></div></li>
+          <li><div><strong>Fleet and commercial tyres</strong><span>Work vehicles kept on the road.</span></div></li>
+          <li><div><strong>Performance and 4WD tyres</strong><span>Grip and strength for the track, the highway or the dirt.</span></div></li>
+        </ul>
+      </div>
+      <div class="svc-col">
+        <h3>Car servicing <span>7 services</span></h3>
+        <ul class="svc-list">
+          <li><div><strong>Oil change</strong><span>Quality oil to protect your engine.</span></div></li>
+          <li><div><strong>Fuel and oil filter replacement</strong><span>Clean fuel and oil flow for a healthier engine.</span></div></li>
+          <li><div><strong>Air filter replacement</strong><span>Better airflow and fuel efficiency.</span></div></li>
+          <li><div><strong>Brake pads and rotors</strong><span>Replacement pads and discs, fitted properly.</span></div></li>
+          <li><div><strong>Fluid checks and top-ups</strong><span>Coolant, brake fluid, transmission and power steering.</span></div></li>
+          <li><div><strong>Wiper blades</strong><span>A clear windscreen in the rain.</span></div></li>
+          <li><div><strong>Battery testing and replacement</strong><span>Reliable starts every morning.</span></div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="svc-foot">
+      <p>Not sure what the car needs? Describe the problem in the quote form and we'll tell you what we'd check first.</p>
+      <a class="btn btn-red" href="#quote">Get a quote</a>
+      <a class="btn btn-line" href="tel:+61288726516">Call (02) 8872 6516</a>
+    </div>
+  </div>
+</section>
+
+<section class="band dark" id="quote">
+  <div class="wrap">
+    <span class="eyebrow">Free quote</span>
+    <h2>Get a price before you drive in.</h2>
+    <p class="lede">It takes about a minute. We reply by phone or text during opening hours.</p>
+    <div class="quote-grid">
+      <div class="q-card" id="qCard">
+        <form id="qForm" novalidate>
+          <fieldset>
+            <legend>What do you need? <small>Choose all that apply</small></legend>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" id="s-tyres" name="service" value="New tyres" checked><span>New tyres</span></label>
+              <label class="chip"><input type="checkbox" id="s-puncture" name="service" value="Puncture repair"><span>Puncture repair</span></label>
+              <label class="chip"><input type="checkbox" id="s-alignment" name="service" value="Wheel alignment"><span>Wheel alignment</span></label>
+              <label class="chip"><input type="checkbox" id="s-service" name="service" value="Car service"><span>Car service</span></label>
+              <label class="chip"><input type="checkbox" id="s-brakes" name="service" value="Brakes"><span>Brakes</span></label>
+              <label class="chip"><input type="checkbox" id="s-other" name="service" value="Something else"><span>Something else</span></label>
+            </div>
+            <p class="err" id="svcErr" hidden>Choose at least one service.</p>
+          </fieldset>
+
+          <fieldset id="sizeBlock">
+            <legend>Tyre size <small>Printed on the side of your tyre</small></legend>
+            <div id="sizeInputs">
+              <div class="size-row">
+                <div class="field"><label for="q-width">Width</label><select id="q-width"></select></div>
+                <div class="sep" aria-hidden="true">/</div>
+                <div class="field"><label for="q-profile">Profile</label><select id="q-profile"></select></div>
+                <div class="sep" aria-hidden="true">R</div>
+                <div class="field"><label for="q-rim">Rim</label><select id="q-rim"></select></div>
+              </div>
+            </div>
+            <label class="check"><input type="checkbox" id="q-unknown"><span>I don't know my tyre size</span></label>
+            <p class="hint" id="unknownHint" hidden>No problem. Add your car below and we'll look the size up for you.</p>
+            <div class="row" style="margin-top:16px">
+              <div class="field"><label for="q-qty">How many tyres?</label>
+                <select id="q-qty"><option>1</option><option>2</option><option selected>4</option><option>5 (with spare)</option><option>Not sure</option></select></div>
+              <div class="field"><label for="q-budget">Looking for</label>
+                <select id="q-budget"><option>Best value</option><option>Mid-range</option><option>Premium brand</option><option>Show me the options</option></select></div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Your car and timing</legend>
+            <div class="row">
+              <div class="field"><label for="q-car">Car <small>make, model, year</small></label><input type="text" id="q-car" placeholder="e.g. Toyota Corolla 2018" autocomplete="off"></div>
+              <div class="field"><label for="q-when">When suits you?</label>
+                <select id="q-when"><option>As soon as possible</option><option>Today</option><option>Tomorrow</option><option>This week</option><option>Just pricing for now</option></select></div>
+            </div>
+            <div class="field" style="margin-top:14px"><label for="q-notes">Anything else? <small>optional</small></label><textarea id="q-notes" placeholder="e.g. steering pulls left, nail in rear tyre"></textarea></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Where do we send the quote?</legend>
+            <div class="row">
+              <div class="field" id="f-name"><label for="q-name">Name</label><input type="text" id="q-name" autocomplete="name"><p class="err" hidden>Add your name so we know who to ask for.</p></div>
+              <div class="field" id="f-phone"><label for="q-phone">Mobile</label><input type="tel" id="q-phone" autocomplete="tel" inputmode="tel" placeholder="04xx xxx xxx"><p class="err" hidden>Add a phone number we can reach you on.</p></div>
+            </div>
+          </fieldset>
+
+          <div class="submit-row">
+            <button class="btn btn-red" type="submit" id="qSubmit">Send my quote request</button>
+            <p>Prefer to talk? Call <strong>(02) 8872 6516</strong>.</p>
+          </div>
+        </form>
+        <div class="done" id="qDone" hidden tabindex="-1">
+          <div class="tick" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <h3>Request received</h3>
+          <p style="margin-top:10px;color:var(--muted)">Thanks, <span id="dName"></span>. We'll call or text you with a price during opening hours.</p>
+          <dl id="dList"></dl>
+          <p class="demo-note" id="demoNote">Demo only: nothing was sent. On the live site this request arrives in the shop's inbox straight away, and can also go to a mobile by SMS.</p>
+          <button class="btn btn-line" type="button" id="qAgain">Send another request</button>
+        </div>
+      </div>
+
+      <aside class="reader" aria-label="How to read your tyre size">
+        <div class="reader-tyre" id="readerTyre" aria-hidden="true"></div>
+        <div>
+          <h3>Find your size on the sidewall</h3>
+          <p class="code" aria-live="polite"><span class="w" id="cW">205</span><i>/</i><span class="p" id="cP">55</span> <i>R</i><span class="r" id="cR">16</span></p>
+          <ul class="legend">
+            <li class="w"><b id="lW">205</b> Tyre width in millimetres</li>
+            <li class="p"><b id="lP">55</b> Sidewall height as a percentage of width</li>
+            <li class="r"><b id="lR">16</b> Rim diameter in inches</li>
+          </ul>
+        </div>
+        <p class="or">Flat tyre right now? Skip the form and call<a href="tel:+61288726516">(02) 8872 6516</a></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="reviews">
+  <div class="wrap">
+    <div class="rev-grid">
+      <div>
+        <span class="eyebrow">Google reviews</span>
+        <div class="score" aria-label="5.0 out of 5">5.0<sup>/5</sup></div>
+        <div class="score-meta">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <strong>More than 2,100 Google reviews</strong>
+          <a href="https://www.google.com/maps/search/?api=1&query=Amart+Tyres+86+Parramatta+Road+Granville+NSW+2142" target="_blank" rel="noopener">Read them on Google</a>
+        </div>
+        <blockquote class="pull">
+          <p>"No upselling. No surcharge."</p>
+          <cite>Tracy X., after a flat tyre on a public holiday</cite>
+        </blockquote>
+      </div>
+      <div>
+        <h2>What customers keep saying.</h2>
+        <ul class="said">
+          <li><b>Fast</b><span>One reviewer had a puncture repaired in under ten minutes. Others mention being in and out quickly for tyres and alignments.</span></li>
+          <li><b>Fair prices</b><span>Reviewers repeatedly call the pricing reasonable, including for wheel alignments and premium-brand tyres.</span></li>
+          <li><b>Same day</b><span>A customer let down by another shop phoned ahead and had four 22-inch tyres supplied and fitted that day.</span></li>
+          <li><b>Straight advice</b><span>Friendly, professional staff who explain the job and don't push extras.</span></li>
+        </ul>
+        <p class="fine">Summarised from public Google reviews of Amart Tyres. The live site shows the reviews themselves, updated automatically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band dark" id="brands">
+  <div class="wrap">
+    <span class="eyebrow">Tyres and wheels</span>
+    <h2>The brands you ask for, and the ones that save you money.</h2>
+    <div class="brand-rows">
+      <div class="brand-row"><span>Tyres</span><ul><li>Continental</li><li>Pirelli</li><li>Hankook</li><li>Yokohama</li><li>Haida</li><li>and more</li></ul></div>
+      <div class="brand-row"><span>Wheels</span><ul><li>Simmons</li><li>Rays</li><li>Work</li><li>Speedy</li><li>Black Rhino</li><li>Diesel</li></ul></div>
+    </div>
+    <div class="find-cta"><a class="btn btn-red" href="#quote">Ask for a price on your size</a></div>
+  </div>
+</section>
+
+<section class="band concrete" id="about">
+  <div class="wrap two">
+    <div class="about">
+      <span class="eyebrow">About us</span>
+      <h2>A family-owned shop that does the job properly.</h2>
+      <p>Amart Tyres is a family-owned tyre and wheel shop on Parramatta Road in Granville. We fit tyres, align wheels and service cars with computerised alignment equipment, digital balancing machines and proper diagnostic tools.</p>
+      <p>We ask what you drive and how you drive it before we recommend anything. Small car, SUV, 4WD, performance car or work truck, you get honest advice and a fair price.</p>
+    </div>
+    <div class="faq" id="faq">
+      <span class="eyebrow">Common questions</span>
+      <h2>Before you visit.</h2>
+      <details open><summary>Do I need to book?</summary><p>No. You can drive in during opening hours. If you call ahead or send a quote request, we can check stock and have your tyres ready so you wait less.</p></details>
+      <details><summary>Do new tyres come with a warranty?</summary><p>Yes. Every new tyre we sell is covered by a warranty. The terms depend on the brand and type of tyre, and we'll explain them when you buy.</p></details>
+      <details><summary>How do I find my tyre size?</summary><p>Look at the side of your tyre for a code like 205/55 R16. Enter those three numbers in the quote form. If you can't find it, tell us your car's make, model and year and we'll look it up.</p></details>
+      <details><summary>What vehicles do you work on?</summary><p>All makes and models of cars, SUVs and 4WDs, plus light and heavy-duty trucks and fleet vehicles.</p></details>
+      <details><summary>How can I pay?</summary><p>Cash, EFTPOS, Visa and Mastercard.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band dark" id="find-us">
+  <div class="wrap">
+    <span class="eyebrow">Find us</span>
+    <h2>86 Parramatta Road, Granville.</h2>
+    <div class="find-grid">
+      <div>
+        <h3>Address</h3>
+        <p class="big">86 Parramatta Road<br>Granville NSW 2142</p>
+        <a class="link" href="https://www.google.com/maps/dir/?api=1&destination=86+Parramatta+Road+Granville+NSW+2142" target="_blank" rel="noopener">Get directions</a>
+      </div>
+      <div>
+        <h3>Phone</h3>
+        <p class="big" id="phoneText">(02) 8872 6516</p>
+        <p>Tap to call from your mobile.</p>
+        <button class="copy-btn" type="button" id="copyPhone">Copy number</button>
+      </div>
+      <div>
+        <h3>Opening hours</h3>
+        <p class="big">8:00 am to 6:00 pm</p>
+        <p>Walk-ins welcome. Call ahead to skip the wait.</p>
+        <!--DEMO:START--><p class="fine" style="color:var(--lane)">Demo note: hours taken from your Localsearch listing. Each day is confirmed with you before launch.</p><!--DEMO:END-->
+      </div>
+    </div>
+    <!--MAP:START-->
+    <div class="map-strip">
+      <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Amart+Tyres+86+Parramatta+Road+Granville+NSW+2142" target="_blank" rel="noopener">Amart Tyres<small>Open in Google Maps</small></a>
+      <span class="road" aria-hidden="true">Parramatta Rd</span>
+    </div>
+    <!--MAP:END-->
+    <div class="find-cta">
+      <a class="btn btn-red" href="#quote">Get a tyre quote</a>
+      <a class="btn btn-ghost" href="tel:+61288726516">Call (02) 8872 6516</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="mark" href="#top"><b>A</b>mart <b>Tyres</b></a>
+    <nav aria-label="Footer">
+      <a href="#services">Services</a><a href="#quote">Get a quote</a><a href="#reviews">Reviews</a><a href="#faq">Questions</a><a href="#find-us">Find us</a>
+    </nav>
+    <p class="legal">© 2026 Amart Tyres, 86 Parramatta Road, Granville NSW 2142. (02) 8872 6516.<!--DEMO:START--> Concept demo by George Lahoud, 0450 075 707.<!--DEMO:END--></p>
+  </div>
+</footer>
+
+<div class="bar" role="group" aria-label="Quick actions">
+  <a class="btn btn-ghost" href="tel:+61288726516"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call now</a>
+  <a class="btn btn-red" href="#quote">Get a quote</a>
+</div>
+
+<script>
+(function(){
+  /* Set at install: the address the quote form posts to (Formspree, Web3Forms, Netlify Forms, or the shop's own endpoint). Empty = demo mode. */
+  var FORM_ENDPOINT = "";
+  var $ = function(id){ return document.getElementById(id); };
+
+  /* ---------- tyre drawing ---------- */
+  function tyre(uid, sidewall){
+    var spokes = "";
+    for (var i = 0; i < 5; i++){
+      spokes += '<g transform="rotate(' + (i*72) + ' 200 200)">' +
+        '<path d="M186 176 L177 96 Q200 86 223 96 L214 176 Z" fill="url(#sp' + uid + ')"/>' +
+        '<path d="M200 172 L200 98" stroke="#5d6168" stroke-width="5" stroke-linecap="round"/>' +
+        '<circle cx="200" cy="174" r="4.5" fill="#2b2d32"/></g>';
+    }
+    return '<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">' +
+      '<defs>' +
+        '<linearGradient id="sp' + uid + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3e6ea"/><stop offset="1" stop-color="#8b9098"/></linearGradient>' +
+        '<radialGradient id="rb' + uid + '" cx=".5" cy=".5" r=".5"><stop offset=".7" stop-color="#0b0c0e"/><stop offset="1" stop-color="#1b1d21"/></radialGradient>' +
+        '<path id="arc' + uid + '" d="M52 200 a148 148 0 1 1 296 0 a148 148 0 1 1 -296 0"/>' +
+      '</defs>' +
+      '<circle cx="200" cy="200" r="197" fill="#08090a"/>' +
+      '<circle cx="200" cy="200" r="190" fill="none" stroke="#25272c" stroke-width="12" stroke-dasharray="7 5"/>' +
+      '<circle cx="200" cy="200" r="181" fill="url(#rb' + uid + ')"/>' +
+      '<circle cx="200" cy="200" r="170" fill="none" stroke="#2c2f35" stroke-width="1.5"/>' +
+      '<circle cx="200" cy="200" r="127" fill="none" stroke="#2c2f35" stroke-width="1.5"/>' +
+      '<text font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="27" fill="#c9cdd3" dy="9">' +
+        '<textPath href="#arc' + uid + '" textLength="918" lengthAdjust="spacing" id="tp' + uid + '">' + sidewall + '</textPath></text>' +
+      '<circle cx="200" cy="200" r="118" fill="#101113"/>' +
+      '<circle cx="200" cy="200" r="114" fill="none" stroke="url(#sp' + uid + ')" stroke-width="7"/>' +
+      '<circle cx="200" cy="200" r="78" fill="#3b3e44"/>' +
+      '<circle cx="200" cy="200" r="78" fill="none" stroke="#565a62" stroke-width="2" stroke-dasharray="3 9"/>' +
+      '<path d="M258 150 A76 76 0 0 1 276 200 L252 200 A52 52 0 0 0 240 166 Z" fill="#dc1f26"/>' +
+      spokes +
+      '<circle cx="200" cy="200" r="30" fill="url(#sp' + uid + ')"/>' +
+      '<circle cx="200" cy="200" r="15" fill="#16171a"/>' +
+      '<circle cx="200" cy="200" r="6" fill="#dc1f26"/>' +
+      '</svg>';
+  }
+  function sidewallText(w, p, r){
+    var size = '<tspan fill="#f5c21b">' + w + '</tspan>/<tspan fill="#ff6a70">' + p + '</tspan> R<tspan fill="#7fd0ff">' + r + '</tspan>';
+    var gap = '  •  ';
+    return 'AMART TYRES' + gap + size + ' 91V' + gap + 'GRANVILLE' + gap + size + ' 91V' + gap;
+  }
+  $("heroTyre").innerHTML = tyre("h", sidewallText(205, 55, 16));
+  $("readerTyre").innerHTML = tyre("r", sidewallText(205, 55, 16));
+
+  /* ---------- tyre size selects ---------- */
+  function fill(sel, from, to, step, def){
+    for (var v = from; v <= to; v += step){
+      var o = document.createElement("option"); o.textContent = v; if (v === def) o.selected = true; sel.appendChild(o);
+    }
+  }
+  var W = $("q-width"), P = $("q-profile"), R = $("q-rim");
+  fill(W, 145, 335, 10, 205); fill(P, 25, 85, 5, 55); fill(R, 13, 22, 1, 16);
+  function syncSize(){
+    var w = W.value, p = P.value, r = R.value;
+    $("cW").textContent = $("lW").textContent = w;
+    $("cP").textContent = $("lP").textContent = p;
+    $("cR").textContent = $("lR").textContent = r;
+    var tp = $("tpr"); if (tp) tp.innerHTML = sidewallText(w, p, r);
+  }
+  [W, P, R].forEach(function(s){ s.addEventListener("change", syncSize); });
+
+  /* ---------- show/hide tyre block ---------- */
+  var sTyres = $("s-tyres"), unknown = $("q-unknown");
+  function syncBlocks(){
+    $("sizeBlock").hidden = !sTyres.checked;
+    $("sizeInputs").hidden = unknown.checked;
+    $("unknownHint").hidden = !unknown.checked;
+  }
+  sTyres.addEventListener("change", syncBlocks);
+  unknown.addEventListener("change", syncBlocks);
+
+  /* ---------- intent shortcuts ---------- */
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('input[name="service"]'));
+  document.querySelectorAll(".intent").forEach(function(b){
+    b.addEventListener("click", function(){
+      boxes.forEach(function(x){ x.checked = false; });
+      $("s-" + b.dataset.pick).checked = true;
+      syncBlocks(); showForm();
+      $("quote").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+    });
+  });
+
+  /* ---------- menu ---------- */
+  var nav = $("nav"), menuBtn = $("menuBtn");
+  function setMenu(open){ nav.classList.toggle("open", open); menuBtn.setAttribute("aria-expanded", open); menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu"); }
+  menuBtn.addEventListener("click", function(){ setMenu(!nav.classList.contains("open")); });
+  nav.addEventListener("click", function(e){ if (e.target.tagName === "A") setMenu(false); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") setMenu(false); });
+
+  /* ---------- copy phone ---------- */
+  $("copyPhone").addEventListener("click", function(){
+    var btn = this, num = "02 8872 6516";
+    function fallback(){ var r = document.createRange(); r.selectNodeContents($("phoneText")); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "Number selected"; }
+    try { navigator.clipboard.writeText(num).then(function(){ btn.textContent = "Copied"; setTimeout(function(){ btn.textContent = "Copy number"; }, 2000); }, fallback); }
+    catch (err) { fallback(); }
+  });
+
+  /* ---------- quote form ---------- */
+  var form = $("qForm"), done = $("qDone");
+  function showForm(){ form.hidden = false; done.hidden = true; }
+  function flag(fieldId, bad){
+    var f = $(fieldId); f.classList.toggle("bad", bad); f.querySelector(".err").hidden = !bad; return bad;
+  }
+  function collect(){
+    var services = boxes.filter(function(x){ return x.checked; }).map(function(x){ return x.value; });
+    var d = { Services: services.join(", ") };
+    if (sTyres.checked){
+      d["Tyre size"] = unknown.checked ? "Not sure, please look it up" : W.value + "/" + P.value + " R" + R.value;
+      d["Quantity"] = $("q-qty").value;
+      d["Looking for"] = $("q-budget").value;
+    }
+    if ($("q-car").value.trim()) d["Car"] = $("q-car").value.trim();
+    d["Timing"] = $("q-when").value;
+    if ($("q-notes").value.trim()) d["Notes"] = $("q-notes").value.trim();
+    d["Name"] = $("q-name").value.trim();
+    d["Mobile"] = $("q-phone").value.trim();
+    return { data: d, services: services };
+  }
+  function showDone(d){
+    $("dName").textContent = d.Name.split(" ")[0];
+    var dl = $("dList"); dl.textContent = "";
+    Object.keys(d).forEach(function(k){
+      var row = document.createElement("div"), dt = document.createElement("dt"), dd = document.createElement("dd");
+      dt.textContent = k; dd.textContent = d[k]; row.appendChild(dt); row.appendChild(dd); dl.appendChild(row);
+    });
+    $("demoNote").hidden = !!FORM_ENDPOINT;
+    form.hidden = true; done.hidden = false; done.focus({preventScroll: true});
+    $("qCard").scrollIntoView({block: "nearest"});
+  }
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var c = collect(), d = c.data;
+    var noSvc = c.services.length === 0; $("svcErr").hidden = !noSvc;
+    var badName = flag("f-name", d.Name.length < 2);
+    var badPhone = flag("f-phone", d.Mobile.replace(/\D/g, "").length < 8);
+    if (noSvc || badName || badPhone){
+      (noSvc ? $("s-tyres") : badName ? $("q-name") : $("q-phone")).focus();
+      return;
+    }
+    if (!FORM_ENDPOINT){ showDone(d); return; }
+    var btn = $("qSubmit"); btn.disabled = true; btn.textContent = "Sending…";
+    fetch(FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(d) })
+      .then(function(r){ if (!r.ok) throw new Error(); showDone(d); })
+      .catch(function(){ $("svcErr").hidden = false; $("svcErr").textContent = "That didn't send. Please call (02) 8872 6516 and we'll take the details by phone."; })
+      .then(function(){ btn.disabled = false; btn.textContent = "Send my quote request"; });
+  });
+  ["q-name", "q-phone"].forEach(function(id){ $(id).addEventListener("input", function(){ flag(id === "q-name" ? "f-name" : "f-phone", false); }); });
+  $("qAgain").addEventListener("click", function(){ form.reset(); syncSize(); syncBlocks(); showForm(); });
+
+  syncSize(); syncBlocks();
+})();
+</script>
+
+</body>
+</html>
